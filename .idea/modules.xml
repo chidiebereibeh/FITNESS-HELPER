@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FITNESS-HELPER.iml" filepath="$PROJECT_DIR$/.idea/modules/FITNESS-HELPER.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FITNESS-HELPER.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FITNESS-HELPER.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/..//FITNESS-HELPER/../../Fitness-Helper/.idea/modules/Fitness-Helper.iml" filepath="$PROJECT_DIR$/..//FITNESS-HELPER/../../Fitness-Helper/.idea/modules/Fitness-Helper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/..//FITNESS-HELPER/../../Fitness-Helper/.idea/modules/app/Fitness-Helper.app.iml" filepath="$PROJECT_DIR$/..//FITNESS-HELPER/../../Fitness-Helper/.idea/modules/app/Fitness-Helper.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Fitness-Helper.iml" filepath="$PROJECT_DIR$/.idea/modules/Fitness-Helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fitness-Helper.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fitness-Helper.app.iml" />
     </modules>
   </component>
 </project>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +9,44 @@
 
    <include layout="@layout/test1"></include>
 
+   <ImageView
+       android:id="@+id/imageView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/front_snapshot"
+       android:visibility="invisible"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
    <Button
        android:id="@+id/button"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:text="Rotate" />
+
+   <Button
+       android:id="@+id/buttonNeck"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="24dp"
+       android:layout_marginTop="180dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/buttonShoulder"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_gravity="end"
+       android:layout_marginStart="24dp"
+       android:layout_marginTop="180dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 
 </FrameLayout>
