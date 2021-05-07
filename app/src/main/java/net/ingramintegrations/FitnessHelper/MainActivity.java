@@ -4,14 +4,13 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,11 +18,14 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mMediaPlayer;
     int mCurrentVideoPosition;
     private VideoView videoBG;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         final Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +63,21 @@ public class MainActivity extends AppCompatActivity {
 
                         // Shoulder
                         setupButton(R.id.buttonShoulder, ShoulderActivity.class);
+
+                        //Elbow
+                        setupButton(R.id.buttonElbow, ElbowActivity.class);
+
+                        //Thight
+                        setupButton(R.id.buttonThigh, ThighActivity.class);
+
+                        //Knee
+                        setupButton(R.id.buttonKnee, KneeActivity.class);
+
+                        //Foot
+                        setupButton(R.id.buttonFoot, FootActivity.class);
+
+                        //Hand
+                        setupButton(R.id.buttonHand, WristActivity.class);
                     }
                 });
             }
