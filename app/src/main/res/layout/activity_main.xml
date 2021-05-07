@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coffee_bg"
+    tools:context="net.ingramintegrations.videobackground.MainActivity">
+
+   <include layout="@layout/test1"></include>
+
+   <ImageView
+       android:id="@+id/imageView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:src="@drawable/front_snapshot"
+       android:visibility="invisible"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Rotate" />
+
+   <Button
+       android:id="@+id/buttonNeck"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="24dp"
+       android:layout_marginTop="200dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/buttonShoulder"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="400dp"
+       android:layout_marginTop="255dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/buttonElbow"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="22dp"
+       android:layout_marginTop="345dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/buttonThigh"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="42dp"
+       android:layout_marginTop="520dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <Button
+       android:id="@+id/buttonKnee"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="44dp"
+       android:layout_marginTop="670dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"/>
+
+   <Button
+       android:id="@+id/buttonFoot"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="47dp"
+       android:layout_marginTop="852dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"/>
+
+   <Button
+       android:id="@+id/buttonHand"
+       android:layout_width="30dp"
+       android:layout_height="30dp"
+       android:layout_marginStart="410dp"
+       android:layout_marginTop="470dp"
+       android:background="#FFFFFF"
+       android:visibility="invisible"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"/>
+
+</FrameLayout>

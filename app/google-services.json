@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "424129901933",
+    "project_id": "fitness-helper-group1",
+    "storage_bucket": "fitness-helper-group1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424129901933:android:231a96f83a2a7738309664",
+        "android_client_info": {
+          "package_name": "com.example.fitnesshelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424129901933-rjkok456n7o29d1gd71ok41i2quktgd9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrV8fxMzW2OZ11lHlJ2siNjPrmcqYHBLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424129901933-rjkok456n7o29d1gd71ok41i2quktgd9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424129901933:android:fbbd575740d42e40309664",
+        "android_client_info": {
+          "package_name": "integrations.FitnessHelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424129901933-rjkok456n7o29d1gd71ok41i2quktgd9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrV8fxMzW2OZ11lHlJ2siNjPrmcqYHBLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424129901933-rjkok456n7o29d1gd71ok41i2quktgd9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
