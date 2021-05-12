@@ -16,6 +16,7 @@ public class NeckActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neck);
 
+
         Button previous = findViewById(R.id.previousButton1);
         previous.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
