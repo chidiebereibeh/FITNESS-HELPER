@@ -18,11 +18,6 @@ public class NeckActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neck);
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Neck!");
 
         Button previous = findViewById(R.id.previousButton1);
         previous.setOnClickListener(v -> {
