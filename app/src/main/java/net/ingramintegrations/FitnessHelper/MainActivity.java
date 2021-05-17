@@ -13,6 +13,9 @@ import android.widget.VideoView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 
+import java.util.ArrayList;
+
+
 public class MainActivity extends AppCompatActivity {
 
     MediaPlayer mMediaPlayer;
@@ -26,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        Button stat = findViewById(R.id.stat);
+
+        stat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivate();
+            }
+        });
 
 
         final Button button = findViewById(R.id.button);
@@ -67,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
                         //Elbow
                         setupButton(R.id.buttonElbow, ElbowActivity.class);
+
 
                         //Thight
                         setupButton(R.id.buttonThigh, ThighActivity.class);
@@ -121,6 +134,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity2() {
         Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
+
+    public void openActivate() {
+        Intent intent = new Intent(MainActivity.this, Statistics.class);
         startActivity(intent);
     }
 }

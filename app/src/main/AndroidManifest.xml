@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="net.ingramintegrations.FitnessHelper">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,7 +20,9 @@
         <activity android:name=".ShoulderActivity" />
         <activity android:name=".NeckActivity" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+            <activity android:name=".Statistics">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

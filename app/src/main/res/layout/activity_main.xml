@@ -22,7 +22,7 @@
 
    <Button
        android:id="@+id/button"
-       android:layout_width="wrap_content"
+       android:layout_width="227dp"
        android:layout_height="wrap_content"
        android:text="Rotate" />
 
@@ -102,5 +102,16 @@
        android:visibility="invisible"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"/>
+
+   <Button
+       android:id="@+id/stat"
+       style="@style/Widget.AppCompat.Button"
+       android:layout_width="69dp"
+       android:layout_height="wrap_content"
+       android:background="#F44336"
+       android:text="Stat"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+       android:textColor="#FFFFFF"
+       android:textSize="20sp" />
 
 </FrameLayout>

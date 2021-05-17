@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 
 public class NeckActivity extends AppCompatActivity {
 
@@ -18,6 +22,23 @@ public class NeckActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neck);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        DocumentReference elbowRef = db.collection("Neck").document("Neck");
+        elbowRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    System.out.println(documentSnapshot);
+                    documentSnapshot.getString("Neck");
+                    int value= Integer.parseInt(documentSnapshot.getString("Neck"));
+                    String value1= String.valueOf(value+1);
+                    elbowRef.update("Neck",value1);
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
+            }
+        });
 
         Button previous = findViewById(R.id.previousButton1);
         previous.setOnClickListener(v -> {
