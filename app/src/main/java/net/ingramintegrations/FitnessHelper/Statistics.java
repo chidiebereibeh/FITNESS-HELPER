@@ -25,8 +25,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 
 public class Statistics extends AppCompatActivity {
+    ArrayList<PieEntry> entries = new ArrayList<>();
 
-    ArrayList<Integer> hello = new ArrayList<>();
     private PieChart pieChart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,9 @@ public class Statistics extends AppCompatActivity {
                 openActivate();
             }
         });
-//this is how I want to get the value from database and then put it in (loadPieData)
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        //Gets elbow value from database and stores it in PieChart
 
         DocumentReference elbowRef = db.collection("Elbow").document("Elbow");
         elbowRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -57,6 +58,124 @@ public class Statistics extends AppCompatActivity {
                     System.out.println(documentSnapshot);
                     documentSnapshot.getString("Elbow");
                     int elbow= Integer.parseInt(documentSnapshot.getString("Elbow"));
+                    entries.add(new PieEntry(elbow, "elbow"));
+                    loadPieChartData();
+
+
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
+            }
+        });
+        //Gets foot value from database and stores it in PieChart
+        DocumentReference footRef = db.collection("Foot").document("Foot");
+        footRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    System.out.println(documentSnapshot);
+                    documentSnapshot.getString("Foot");
+                    int foot= Integer.parseInt(documentSnapshot.getString("Foot"));
+                    entries.add(new PieEntry(foot, "Foot"));
+                    loadPieChartData();
+
+
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
+            }
+        });
+        //Gets knee value from database and stores it in PieChart
+        DocumentReference kneeRef = db.collection("Knee").document("Knee");
+        kneeRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    System.out.println(documentSnapshot);
+                    documentSnapshot.getString("Knee");
+                    int knee= Integer.parseInt(documentSnapshot.getString("Knee"));
+                    entries.add(new PieEntry(knee, "Knee"));
+                    loadPieChartData();
+
+
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
+            }
+        });
+        //Gets neck value from database and stores it in PieChart
+        DocumentReference neckRef = db.collection("Neck").document("Neck");
+        neckRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    System.out.println(documentSnapshot);
+                    documentSnapshot.getString("Neck");
+                    int neck= Integer.parseInt(documentSnapshot.getString("Neck"));
+                    entries.add(new PieEntry(neck, "Neck"));
+                    loadPieChartData();
+
+
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
+            }
+        });
+        //Gets shoulder value from database and stores it in PieChart
+        DocumentReference shoulderRef = db.collection("Shoulder").document("Shoulder");
+        shoulderRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    System.out.println(documentSnapshot);
+                    documentSnapshot.getString("Shoulder");
+                    int shoulder= Integer.parseInt(documentSnapshot.getString("Shoulder"));
+                    entries.add(new PieEntry(shoulder, "Shoulder"));
+                    loadPieChartData();
+
+
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
+            }
+        });
+        //Gets thigh value from database and stores it in PieChart
+        DocumentReference thighRef = db.collection("Thigh").document("Thigh");
+        thighRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    System.out.println(documentSnapshot);
+                    documentSnapshot.getString("Thigh");
+                    int thigh= Integer.parseInt(documentSnapshot.getString("Thigh"));
+                    entries.add(new PieEntry(thigh, "Thigh"));
+                    loadPieChartData();
+
+
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
+            }
+        });
+        //Gets wrist value from database and stores it in PieChart
+        DocumentReference wristRef = db.collection("Wrist").document("Wrist");
+        wristRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()){
+                    System.out.println(documentSnapshot);
+                    documentSnapshot.getString("Wrist");
+                    int wrist= Integer.parseInt(documentSnapshot.getString("Wrist"));
+                    entries.add(new PieEntry(wrist, "Wrist"));
+                    loadPieChartData();
+
+
 
                 }
                 else
@@ -67,7 +186,12 @@ public class Statistics extends AppCompatActivity {
 
     }
 
+
+
+
+
     private void setupPieChart() {
+
         pieChart.setDrawHoleEnabled(true);
         pieChart.setUsePercentValues(true);
         pieChart.setEntryLabelTextSize(12);
@@ -84,20 +208,11 @@ public class Statistics extends AppCompatActivity {
         l.setEnabled(true);
 
 
+
     }
 
+
     private void loadPieChartData() {
-        ArrayList<PieEntry> entries = new ArrayList<>();
-        int elbow=50;
-
-        entries.add(new PieEntry(elbow, "elbow"));
-        entries.add(new PieEntry(10, "foot"));
-        entries.add(new PieEntry(80, "knee"));
-        entries.add(new PieEntry(12, "neck"));
-        entries.add(new PieEntry(5, "shoulder"));
-        entries.add(new PieEntry(99, "thigh"));
-        entries.add(new PieEntry(43, "wrist"));
-
 
 
         ArrayList<Integer> colors = new ArrayList<>();
@@ -121,6 +236,7 @@ public class Statistics extends AppCompatActivity {
         pieChart.invalidate();
 
         pieChart.animateY(1400, Easing.EaseInOutQuad);
+
 
     }
 
