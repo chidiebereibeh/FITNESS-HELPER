@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/coffee_bg"
-    tools:context="net.ingramintegrations.videobackground.MainActivity">
+    tools:context="net.ingramintegrations.FitnessHelper.MainActivity">
 
    <include layout="@layout/test1"></include>
 
@@ -24,7 +24,7 @@
        android:id="@+id/button"
        android:layout_width="227dp"
        android:layout_height="wrap_content"
-       android:text="Rotate" />
+       android:text="@string/rotate" />
 
    <Button
        android:id="@+id/buttonNeck"
@@ -101,7 +101,7 @@
        android:background="#FFFFFF"
        android:visibility="invisible"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"/>
+       app:layout_constraintTop_toTopOf="parent" />
 
    <Button
        android:id="@+id/stat"
@@ -109,9 +109,17 @@
        android:layout_width="69dp"
        android:layout_height="wrap_content"
        android:background="#F44336"
-       android:text="Stat"
+       android:text="@string/stat"
        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
        android:textColor="#FFFFFF"
        android:textSize="20sp" />
+
+   <Button
+       android:id="@+id/buttonBMI"
+       android:layout_width="69dp"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="800px"
+       android:layout_marginTop="10px"
+       android:text="@string/bmi" />
 
 </FrameLayout>

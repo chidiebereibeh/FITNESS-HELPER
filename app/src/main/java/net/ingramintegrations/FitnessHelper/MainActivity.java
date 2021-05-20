@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.VideoView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.ArrayList;
@@ -39,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button bmiButton = findViewById(R.id.buttonBMI);
+
+        bmiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBMIActivity();
+            }
+        });
 
         final Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
         buttonNeck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("elbow");
                 Intent intent = new Intent(MainActivity.this, tClass);
                 startActivity(intent);
             }
@@ -139,6 +151,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivate() {
         Intent intent = new Intent(MainActivity.this, Statistics.class);
+        startActivity(intent);
+    }
+
+    public void openBMIActivity() {
+        Intent intent = new Intent(this, BMICalculatorActivity.class);
         startActivity(intent);
     }
 }
