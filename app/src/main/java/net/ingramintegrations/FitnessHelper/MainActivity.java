@@ -143,17 +143,17 @@ public class MainActivity extends AppCompatActivity {
         mMediaPlayer.release();
         mMediaPlayer = null;
     }
-
+//Rotates the figure
     public void openActivity2() {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
-
+//Switch to Statitstics
     public void openActivate() {
         Intent intent = new Intent(MainActivity.this, Statistics.class);
         startActivity(intent);
     }
-
+//Switch to BMI Calcuator
     public void openBMIActivity() {
         Intent intent = new Intent(this, BMICalculatorActivity.class);
         startActivity(intent);

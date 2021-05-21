@@ -1,5 +1,6 @@
 package net.ingramintegrations.FitnessHelper;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -46,6 +47,15 @@ public class BMICalculatorActivity extends AppCompatActivity {
         bmiTextView = findViewById(R.id.activity_main_bmi);
         categoryTextView = findViewById(R.id.activity_main_category);
         bmiResultCardView = findViewById(R.id.activity_main_resultcard);
+
+        Button exitPage = findViewById(R.id.ExitPage);
+
+        exitPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openExitActivity();
+            }
+        });
 
         inMetricUnits = true;
         updateInputsVisibility();
@@ -127,6 +137,10 @@ public class BMICalculatorActivity extends AppCompatActivity {
                 bmiResultCardView.setCardBackgroundColor(Color.RED);
                 break;
         }
+    }
+    public void openExitActivity() {
+        Intent intent = new Intent(BMICalculatorActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
 

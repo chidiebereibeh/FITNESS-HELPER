@@ -26,10 +26,11 @@ public class ShoulderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shoulder);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        //Updates value in database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference elbowRef = db.collection("Shoulder").document("Shoulder");
-        elbowRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        DocumentReference shoulderRef = db.collection("Shoulder").document("Shoulder");
+        shoulderRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if (documentSnapshot.exists()){
@@ -37,7 +38,7 @@ public class ShoulderActivity extends AppCompatActivity {
                     documentSnapshot.getString("Shoulder");
                     int value= Integer.parseInt(documentSnapshot.getString("Shoulder"));
                     String value1= String.valueOf(value+1);
-                    elbowRef.update("Shoulder",value1);
+                    shoulderRef.update("Shoulder",value1);
                 }
                 else
                     Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();

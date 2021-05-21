@@ -34,6 +34,8 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+
         button = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +43,23 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 openActivity1();
 
+            }
+        });
+
+        Button stat = findViewById(R.id.stat);
+        stat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivate();
+            }
+        });
+
+        Button bmiButton = findViewById(R.id.buttonBMI);
+
+        bmiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBMIActivity();
             }
         });
 
@@ -106,5 +125,12 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     }
-
+    public void openActivate() {
+        Intent intent = new Intent(MainActivity2.this, Statistics.class);
+        startActivity(intent);
+    }
+    public void openBMIActivity() {
+        Intent intent = new Intent(this, BMICalculatorActivity.class);
+        startActivity(intent);
+    }
 }

@@ -184,4 +184,12 @@
 
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/ExitPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F44336"
+        android:fontFamily="sans-serif-black"
+        android:text="Exit" />
+
 </LinearLayout>

@@ -19,10 +19,11 @@ public class WristActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wrist);
 
+        //Updates value in database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference elbowRef = db.collection("Wrist").document("Wrist");
-        elbowRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        DocumentReference wristRef = db.collection("Wrist").document("Wrist");
+        wristRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if (documentSnapshot.exists()){
@@ -30,7 +31,7 @@ public class WristActivity extends AppCompatActivity {
                     documentSnapshot.getString("Wrist");
                     int value= Integer.parseInt(documentSnapshot.getString("Wrist"));
                     String value1= String.valueOf(value+1);
-                    elbowRef.update("Wrist",value1);
+                    wristRef.update("Wrist",value1);
                 }
                 else
                     Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();

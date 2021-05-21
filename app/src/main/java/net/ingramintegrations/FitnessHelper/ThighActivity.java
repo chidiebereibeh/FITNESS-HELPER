@@ -19,10 +19,11 @@ public class ThighActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thigh);
 
+        //Updates value in database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference elbowRef = db.collection("Thigh").document("Thigh");
-        elbowRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        DocumentReference thighRef = db.collection("Thigh").document("Thigh");
+        thighRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if (documentSnapshot.exists()){
@@ -30,7 +31,7 @@ public class ThighActivity extends AppCompatActivity {
                     documentSnapshot.getString("Thigh");
                     int value= Integer.parseInt(documentSnapshot.getString("Thigh"));
                     String value1= String.valueOf(value+1);
-                    elbowRef.update("Thigh",value1);
+                    thighRef.update("Thigh",value1);
                 }
                 else
                     Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();

@@ -36,7 +36,7 @@ public class ElbowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_elbow);
 
 
-
+        //Updated value in database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         DocumentReference elbowRef = db.collection("Elbow").document("Elbow");

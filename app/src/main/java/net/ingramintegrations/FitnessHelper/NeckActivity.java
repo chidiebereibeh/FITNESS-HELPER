@@ -22,10 +22,13 @@ public class NeckActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neck);
+
+
+        //Updates value in database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference elbowRef = db.collection("Neck").document("Neck");
-        elbowRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        DocumentReference neckRef = db.collection("Neck").document("Neck");
+        neckRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if (documentSnapshot.exists()){
@@ -33,7 +36,7 @@ public class NeckActivity extends AppCompatActivity {
                     documentSnapshot.getString("Neck");
                     int value= Integer.parseInt(documentSnapshot.getString("Neck"));
                     String value1= String.valueOf(value+1);
-                    elbowRef.update("Neck",value1);
+                    neckRef.update("Neck",value1);
                 }
                 else
                     Toast.makeText(getApplicationContext(),"Row not found",Toast.LENGTH_LONG).show();
