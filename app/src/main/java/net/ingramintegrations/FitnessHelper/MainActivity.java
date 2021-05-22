@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -23,14 +24,11 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mMediaPlayer;
     int mCurrentVideoPosition;
     private VideoView videoBG;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         Button stat = findViewById(R.id.stat);
 
@@ -82,44 +80,43 @@ public class MainActivity extends AppCompatActivity {
                     public void onCompletion(MediaPlayer mp) {
 
                         // Neck
-                        setupButton(R.id.buttonNeck, NeckActivity.class);
+                        setupButton(R.id.buttonNeck, NeckActivity.class, "neck");
 
                         // Shoulder
-                        setupButton(R.id.buttonShoulder, ShoulderActivity.class);
+                        setupButton(R.id.buttonShoulder, ShoulderActivity.class, "shoulder");
 
                         //Elbow
-                        setupButton(R.id.buttonElbow, ElbowActivity.class);
-
+                        setupButton(R.id.buttonElbow, ElbowActivity.class, "elbow");
 
                         //Thight
-                        setupButton(R.id.buttonThigh, ThighActivity.class);
+                        setupButton(R.id.buttonThigh, ThighActivity.class, "thigh");
 
                         //Knee
-                        setupButton(R.id.buttonKnee, KneeActivity.class);
+                        setupButton(R.id.buttonKnee, KneeActivity.class, "knee");
 
                         //Foot
-                        setupButton(R.id.buttonFoot, FootActivity.class);
+                        setupButton(R.id.buttonFoot, FootActivity.class, "foot");
 
                         //Hand
-                        setupButton(R.id.buttonHand, WristActivity.class);
+                        setupButton(R.id.buttonHand, WristActivity.class, "wrist");
                     }
                 });
             }
         });
     }
 
-    private <T extends AppCompatActivity> void setupButton(int buttonId, final Class<T> tClass) {
-        Button buttonNeck = findViewById(buttonId);
-        buttonNeck.setOnClickListener(new View.OnClickListener() {
+    private <T extends AppCompatActivity> void setupButton(int buttonId, final Class<T> tClass, String path) {
+        Button button = findViewById(buttonId);
+        button.setVisibility(View.VISIBLE);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("elbow");
+                DatabaseReference myRef = database.getReference(path );
                 Intent intent = new Intent(MainActivity.this, tClass);
                 startActivity(intent);
             }
         });
-        buttonNeck.setVisibility(View.VISIBLE);
     }
 
     @Override
