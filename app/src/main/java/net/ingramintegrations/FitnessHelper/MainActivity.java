@@ -145,12 +145,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
-//Switch to Statitstics
+//Switch to Statistics
     public void openActivate() {
         Intent intent = new Intent(MainActivity.this, Statistics.class);
         startActivity(intent);
     }
-//Switch to BMI Calcuator
+//Switch to BMI Calculator
     public void openBMIActivity() {
         Intent intent = new Intent(this, BMICalculatorActivity.class);
         startActivity(intent);

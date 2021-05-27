@@ -9,4 +9,7 @@
     <string name="stat">Stat</string>
     <string name="rotate">Rotate</string>
     <string name="bmi">BMI</string>
+    <string name="lower_back_information">Lower back information</string>
+    <string name="upper_back_information" />
+    <string name="todo">TODO</string>
 </resources>

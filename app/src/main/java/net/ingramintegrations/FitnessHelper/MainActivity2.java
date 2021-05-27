@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -31,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
 
 
@@ -64,32 +67,50 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
 
-
-
-        videoBG = (VideoView) findViewById(R.id.videoView);
-
-
         Uri uri = Uri.parse("android.resource://"
                 + getPackageName()
                 + "/"
                 + R.raw.back1);
 
-
+        videoBG = findViewById(R.id.videoView);
         videoBG.setVideoURI(uri);
-
-
         videoBG.start();
-
-
         videoBG.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mMediaPlayer = mediaPlayer;
-
                 mMediaPlayer.setLooping(false);
 
-                
-                mMediaPlayer.start();
+                if (mCurrentVideoPosition != 0) {
+                    mMediaPlayer.seekTo(mCurrentVideoPosition);
+                    mMediaPlayer.start();
+                }
+
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+
+                        // lowerBack
+                        setupButton(R.id.lowerBack, UpperBackActivity.class, "upperBack");
+
+                        // upperBack
+                        setupButton(R.id.upperBack, LowerBackActivity.class, "lowerBack");
+                    }
+                });
+            }
+        });
+    }
+
+    private <T extends AppCompatActivity> void setupButton(int buttonId, final Class<T> tClass, String path) {
+        Button button = findViewById(buttonId);
+        button.setVisibility(View.VISIBLE);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference(path );
+                Intent intent = new Intent(MainActivity2.this, tClass);
+                startActivity(intent);
             }
         });
     }
