@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="videoView" type="id" />
+    <item name="lowerBack" type="id" />
+    <item name="upperBack" type="id" />
 </resources>

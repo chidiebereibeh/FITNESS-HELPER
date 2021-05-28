@@ -1,0 +1,2 @@
+com/miguelrochefort/fitnesscamera/lib/BuildConfig.java
+ com.miguelrochefort.fitnesscamera.lib.BuildConfig

@@ -1,9 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    android:background="@drawable/coffee_bg"
+    tools:context="net.ingramintegrations.FitnessHelper.MainActivity2">
 
-</android.support.constraint.ConstraintLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/test1"
+        tools:visibility="visible" />
+
+    <!--      <ImageView-->
+    <!--          android:id="@+id/imageView"-->
+    <!--          android:layout_width="wrap_content"-->
+    <!--          android:layout_height="match_parent"-->
+    <!--          android:src="@drawable/front_snapshot"-->
+    <!--          android:visibility="invisible"-->
+    <!--          app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--          app:layout_constraintEnd_toEndOf="parent"-->
+    <!--          app:layout_constraintStart_toStartOf="parent"-->
+    <!--          app:layout_constraintTop_toTopOf="parent" />-->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="137dp"
+        android:layout_height="37dp"
+        android:text="@string/ai_counter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/buttonNeck"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#800080"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.245" />
+
+    <Button
+        android:id="@+id/buttonShoulder"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:background="#800080"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/buttonElbow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#800080"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409" />
+
+    <Button
+        android:id="@+id/buttonThigh"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#800080"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <Button
+        android:id="@+id/buttonKnee"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#800080"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
+
+    <Button
+        android:id="@+id/buttonFoot"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="#800080"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <Button
+        android:id="@+id/buttonHand"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="16dp"
+        android:background="#800080"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/stat"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="66dp"
+        android:layout_height="37dp"
+        android:background="#F44336"
+        android:text="@string/stat"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#800080"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/buttonBMI"
+        android:layout_width="72dp"
+        android:layout_height="37dp"
+        android:text="@string/bmi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/rotatebtn"
+        android:layout_width="76dp"
+        android:layout_height="37dp"
+        android:text="@string/rotatebtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

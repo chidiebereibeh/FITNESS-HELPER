@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Fitness-Helper-main_-_Copy.iml" filepath="$PROJECT_DIR$/.idea/modules/Fitness-Helper-main_-_Copy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fitness-Helper-main_-_Copy.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fitness-Helper-main_-_Copy.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/posenet/Fitness-Helper-main_-_Copy.posenet.iml" filepath="$PROJECT_DIR$/.idea/modules/posenet/Fitness-Helper-main_-_Copy.posenet.iml" />
+    </modules>
+  </component>
+</project>
